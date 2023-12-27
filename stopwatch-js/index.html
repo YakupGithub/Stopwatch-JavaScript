@@ -15,13 +15,18 @@
             <span id="tens">00</span>
         </div>
         <div class="buttons">
-            <button class="btn" id="start">Başlat</button>
+            <button class="btn" id="start">İleriye Say</button>
+            <button class="btn" id="countdownStart">Geriye Say</button>
             <button class="btn" id="stop">Durdur</button>
             <button class="btn" id="reset">Sıfırla</button>
         </div>
         <div class="speed">
-            <span class="speed-text">1'den 9'a Artış Hızı Belirleyin => </span>
-            <input type="number" id="inputValue" min="1" max="9">
+            <span class="speed-text">1'den 9'a İleriye Artış Hızı Belirleyin => </span>
+            <input class="speed-input" type="number" id="inputValue" min="1" max="9">
+        </div>
+        <div class="countdown">
+            <span class="speed-text">1'den 60'a Geriye Sayılacak Dakikayı Girin => </span>
+            <input class="countdown-input" type="number" id="countdownValue" min="1" max="60">
         </div>
     </div>
     <script src="app.js"></script>

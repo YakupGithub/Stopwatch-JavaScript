@@ -12,9 +12,9 @@ body {
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     font-family: Arial, Helvetica, sans-serif;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -26,16 +26,24 @@ body {
 .header { font-size: 30px; }
 
 .time {
+    font-size: 45px;
+    margin: 20px;
+}
+
+.time span {
     font-size: 60px;
-    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
 }
 
 .btn {
     background-color: aliceblue;
-    font-size: 17px;
+    font-size: 15px;
     width: 100px;
     height: 40px;
-    margin: 15px;
+    margin: 10px;
     border: 1px;
     border-radius: 5px;
 }
@@ -47,10 +55,10 @@ body {
     cursor: pointer;
 }
 
-.speed { margin-top: 20px; }
+.speed { margin: 30px; }
 
-input {
-    width: 25px;
+.speed-input {
+    width: 30px;
     height: 25px;
     font-size: 20px;
 }
@@ -58,4 +66,10 @@ input {
 .speed-text {
     font-size: 17.5px;
     margin-right: 5px;
+}
+
+.countdown-input {
+    width: 50;
+    height: 25px;
+    font-size: 20px;
 }

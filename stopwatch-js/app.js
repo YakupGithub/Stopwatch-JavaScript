@@ -6,9 +6,11 @@ window.onload = function() {
     let appSeconds = document.querySelector('#seconds');
     let appTens = document.querySelector('#tens');
     let startBtn = document.querySelector('#start');
+    let countdownStartBtn = document.querySelector('#countdownStart');
     let stopBtn = document.querySelector('#stop');
     let resetBtn = document.querySelector('#reset');
     let inputValue = document.querySelector('#inputValue');
+    let countdownValue = document.querySelector('#countdownValue');
     let Interval;
 
     const updateDisplay = () => {
@@ -32,9 +34,44 @@ window.onload = function() {
         updateDisplay();
     };
 
+    const countdownTimer = () => {
+        tens--;
+        if (tens < 0) {
+            tens = 99;
+            seconds--;
+
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+            }
+        }
+
+        if (minutes < 0) {
+            clearInterval(Interval);
+            tens = 0;
+            seconds = 0;
+            minutes = 0;
+        }
+
+        updateDisplay();
+    };
+
     startBtn.onclick = () => {
         clearInterval(Interval);
+        tens = 0;
+        seconds = 0;
+        minutes = 0;
+        updateDisplay();
         Interval = setInterval(startTimer, 10);
+    };
+
+    countdownStartBtn.onclick = () => {
+        clearInterval(Interval);
+        minutes = parseInt(countdownValue.value) || 0;
+        seconds = 0;
+        tens = 0;
+        updateDisplay();
+        Interval = setInterval(countdownTimer, 10);
     };
 
     stopBtn.onclick = () => {
